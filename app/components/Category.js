@@ -22,8 +22,9 @@ class Category extends Component {
 
 const styles = StyleSheet.create({
   wrap: {
-    width: 150,
-    height: 150,
+    width: 170,
+    height: 170,
+    padding: 7
   },
   category: {
     width: '100%',
