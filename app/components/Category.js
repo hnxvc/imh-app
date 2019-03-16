@@ -9,9 +9,10 @@ class Category extends Component {
         <ImageBackground
           source={require('../../assets/imgs/bg.jpg')}
           style={styles.category}
+          imageStyle={{ borderRadius: StyleCfs.radius }}
         >
             <Text style={styles.title}>
-              Front End
+              {this.props.title}
             </Text>
         </ImageBackground>
         
@@ -24,12 +25,13 @@ const styles = StyleSheet.create({
   wrap: {
     width: 170,
     height: 170,
-    padding: 7
+    margin: 7,
+    overflow: 'hidden'
   },
   category: {
     width: '100%',
     height: '100%',
-    borderRadius: StyleCfs.radius,
+    borderRadius: StyleCfs.padding,
     justifyContent: 'center',
     alignItems: 'center',
   },
