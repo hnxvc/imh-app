@@ -10,8 +10,9 @@ export default {
   padding: 15,
 
   // font size
+  title: 18,
   heading: 25,
-  fontSize: 18,
+  meta: 10,
 
   // border 
   borderWidth: 1,

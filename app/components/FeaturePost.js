@@ -40,8 +40,6 @@ class FeaturePost extends Component {
 
 const styles = StyleSheet.create({
   wrap: {
-    borderBottomWidth: 1,
-    borderBottomColor: StyleCfs.borderColor
   },
   image: {
     width: '100%',
@@ -60,7 +58,7 @@ const styles = StyleSheet.create({
   },
   meta: {
     flexDirection: 'row',
-    fontSize: 12,
+    fontSize: StyleCfs.meta,
     color: 'blue',
   },
   date: {
