@@ -3,16 +3,26 @@ import { StyleSheet, Text, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createBottomTabNavigator, createStackNavigator, createAppContainer } from 'react-navigation';
 
-import { HomeScreen, CategoriesScreen, PostDetailScreen } from './app/screens/Index';
+import { 
+  HomeScreen, 
+  CategoriesScreen, 
+  PostDetailScreen, 
+  PostListScreen 
+} from './app/screens/Index';
 
 const HomeNavigator = createStackNavigator({
   Home: HomeScreen,
   PostDetail: PostDetailScreen
 });
 
+const CategoryNavigator = createStackNavigator({
+  Categories: CategoriesScreen,
+  PostList: PostListScreen
+});
+
 const bottomTabNavigator = createBottomTabNavigator({
     Home: HomeNavigator,
-    Categories: CategoriesScreen,
+    Categories: CategoryNavigator,
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({

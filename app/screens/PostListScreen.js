@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-class PostDetailScreen extends Component {
+
+class PostListScreen extends Component {
   render() {
     return (
       <View>
-        <Text>Post detail</Text>
+        <Text>Post list</Text>
       </View>
     );
   }
 }
 
-export default PostDetailScreen;
+export default PostListScreen;

@@ -5,6 +5,8 @@ import StyleCfs from '../configs/StyleCfs';
 
 class CategoriesScreen extends Component {
   render() {
+    const {navigate} = this.props.navigation;
+    
     return (
       <View
         style={styles.wrap} 
@@ -44,7 +46,10 @@ class CategoriesScreen extends Component {
               title: 'Un Category'
             }
           ]} 
-          renderItem = {({item}) => <Category title={item.title} />}
+          renderItem = {({item}) => <Category 
+            title={item.title} 
+            onPress={() => navigate('PostList', {name: 'Jane'})}
+          />}
           keyExtractor={(item) => item.key.toString()}
           horizontal={false}
           numColumns = {2}

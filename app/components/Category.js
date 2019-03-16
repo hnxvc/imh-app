@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
-import { View, Text, ImageBackground, StyleSheet } from 'react-native';
+import { View, Text, ImageBackground, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import StyleCfs from '../configs/StyleCfs';
 
 class Category extends Component {
   render() {
     return (
-      <View style={styles.wrap}>
-        <ImageBackground
-          source={require('../../assets/imgs/bg.jpg')}
-          style={styles.category}
-          imageStyle={{ borderRadius: StyleCfs.radius }}
-        >
-            <Text style={styles.title}>
-              {this.props.title}
-            </Text>
-        </ImageBackground>
-        
-      </View>
+      <TouchableWithoutFeedback 
+        onPress={this.props.onPress} 
+      >
+        <View style={styles.wrap}>
+          <ImageBackground
+            source={require('../../assets/imgs/bg.jpg')}
+            style={styles.category}
+            imageStyle={{ borderRadius: StyleCfs.radius }}
+          >
+              <Text style={styles.title}>
+                {this.props.title}
+              </Text>
+          </ImageBackground>
+        </View>
+      </TouchableWithoutFeedback>
     );
   }
 }
