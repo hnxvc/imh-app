@@ -4,7 +4,8 @@ import {
   View,
   Text,
   Image,
-  StyleSheet
+  StyleSheet,
+  TouchableWithoutFeedback
 } from 'react-native';
 import StyleCfs from '../configs/StyleCfs';
 
@@ -12,28 +13,33 @@ import StyleCfs from '../configs/StyleCfs';
 class FeaturePost extends Component {
   render() {
     return (
-      <View style={styles.wrap}>
-        <Image 
-          source = {require('../../assets/imgs/bg.jpg')}
-          style = {styles.image}
-        />
+      <TouchableWithoutFeedback 
+        onPress={this.props.onPress} 
+      >
         <View
-          style={styles.content}
+          style={styles.wrap}
         >
-          <Text
-            style={styles.title}
+          <Image 
+            source = {require('../../assets/imgs/bg.jpg')}
+            style = {styles.image}
+          />
+          <View
+            style={styles.content}
           >
-            React Native provides a unified way of managing images 
-          </Text>
+            <Text
+              style={styles.title}
+            >
+              React Native provides a unified way of managing images 
+            </Text>
 
-          <View style={styles.meta}>
-            <Text style={styles.date}>20/10/2019</Text>
-            <Text style={styles.view}>2k views</Text>
+            <View style={styles.meta}>
+              <Text style={styles.date}>20/10/2019</Text>
+              <Text style={styles.view}>2k views</Text>
+            </View>
+
           </View>
-
         </View>
-        
-      </View>
+      </TouchableWithoutFeedback>
     );
   }
 }

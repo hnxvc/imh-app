@@ -1,12 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import { createBottomTabNavigator, createStackNavigator, createAppContainer } from 'react-navigation';
 
-import { HomeScreen, CategoriesScreen } from './app/screens/Index';
+import { HomeScreen, CategoriesScreen, PostDetailScreen } from './app/screens/Index';
+
+const HomeNavigator = createStackNavigator({
+  Home: HomeScreen,
+  PostDetail: PostDetailScreen
+});
 
 const bottomTabNavigator = createBottomTabNavigator({
-    Home: HomeScreen,
+    Home: HomeNavigator,
     Categories: CategoriesScreen,
   },
   {

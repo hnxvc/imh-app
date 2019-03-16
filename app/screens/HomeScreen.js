@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, FlatList, RefreshControl } from 'react-native';
+import { View, Text, StyleSheet, FlatList, RefreshControl, Button } from 'react-native';
 import StyleCfgs from '../configs/StyleCfs';
 
 import { FeaturePost, Post } from '../components/Index';
@@ -23,9 +23,10 @@ class HomeScreen extends Component {
   }
 
   render() {
+    const {navigate} = this.props.navigation;
+
     return (
       <View style = {styles.screen}>
-
         <FlatList
           refreshControl={
             <RefreshControl
@@ -47,9 +48,13 @@ class HomeScreen extends Component {
             ]
           }
           renderItem={({item, index}) => index === 0 ?
-            <FeaturePost />
+            <FeaturePost
+              onPress={() => navigate('PostDetail', {name: 'Jane'})}
+            />
             :
-            <Post />
+            <Post
+              onPress={() => navigate('PostDetail', {name: 'Jane'})}
+            />
           }
         />
       </View>
