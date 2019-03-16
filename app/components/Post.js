@@ -9,10 +9,7 @@ class Post extends Component {
         onPress={this.props.onPress} 
       >
         <View style={styles.wrap}>
-          <Image 
-            source={require('../../assets/imgs/bg.jpg')}
-            style={styles.image}
-          />
+
           <View style={styles.content}>
             <Text style={styles.title}>The image name is resolved the same way JS modules are resolved.</Text>
             <View style={styles.meta}>
@@ -20,6 +17,11 @@ class Post extends Component {
               <Text style={styles.view}>2k views</Text>
             </View>
           </View>
+          <Image 
+            source={require('../../assets/imgs/bg.jpg')}
+            style={styles.image}
+          />
+          
         </View>
       </TouchableWithoutFeedback>
     );
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
   content: {
     justifyContent: 'space-between',
     flex: 7,
-    paddingLeft: StyleCfs.padding
+    paddingRight: StyleCfs.padding
   },
   title: {
     fontSize: StyleCfs.title
