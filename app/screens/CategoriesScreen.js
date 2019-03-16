@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import { Category } from '../components/Index';
 
 class CategoriesScreen extends Component {
   render() {
     return (
       <View>
-          <Text>Categories screen</Text>
+          <Category />
+          <Category />
+          <Category />
+          <Category />
       </View>
     );
   }
