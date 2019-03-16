@@ -15,9 +15,15 @@ const HomeNavigator = createStackNavigator({
   PostDetail: PostDetailScreen
 });
 
+
+const PostListNavigator = createStackNavigator({
+  PostList: PostListScreen,
+  PostDetail: PostDetailScreen
+});
+
 const CategoryNavigator = createStackNavigator({
   Categories: CategoriesScreen,
-  PostList: PostListScreen
+  PostList: PostListNavigator
 });
 
 const bottomTabNavigator = createBottomTabNavigator({
