@@ -3,6 +3,11 @@ import { View, Text, FlatList, RefreshControl } from 'react-native';
 
 import { Post } from '../components/Index';
 class PostListScreen extends Component {
+  static navigationOptions =
+  {
+    header : null
+  };
+  
   constructor(props) {
     super(props);
     this.state = {

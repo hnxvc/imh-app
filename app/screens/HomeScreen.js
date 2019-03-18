@@ -5,6 +5,12 @@ import StyleCfgs from '../configs/StyleCfs';
 import { FeaturePost, Post } from '../components/Index';
 
 class HomeScreen extends Component {
+
+  static navigationOptions =
+  {
+    header : null
+  };
+
   constructor(props) {
     super(props);
     this.state = {

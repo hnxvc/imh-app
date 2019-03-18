@@ -4,6 +4,11 @@ import { Category } from '../components/Index';
 import StyleCfs from '../configs/StyleCfs';
 
 class CategoriesScreen extends Component {
+  static navigationOptions =
+  {
+    header : null
+  };
+  
   constructor(props) {
     super(props);
     this.state = {
