@@ -12,19 +12,23 @@ import {
 
 const HomeNavigator = createStackNavigator({
   Home: HomeScreen,
-  PostDetail: PostDetailScreen
+  PostDetail: PostDetailScreen,
 });
-
 
 const PostListNavigator = createStackNavigator({
-  PostList: PostListScreen,
-  PostDetail: PostDetailScreen
-});
+    PostList: PostListScreen,
+    PostDetail: PostDetailScreen
+  }
+);
 
 const CategoryNavigator = createStackNavigator({
-  Categories: CategoriesScreen,
-  PostList: PostListNavigator
-});
+    Categories: CategoriesScreen,
+    PostList: PostListNavigator
+  },
+  {
+    headerMode: 'none'
+  }
+);
 
 const bottomTabNavigator = createBottomTabNavigator({
     Home: HomeNavigator,
