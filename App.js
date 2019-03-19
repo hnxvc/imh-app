@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar} from 'react-native';
+import React, { Component } from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createBottomTabNavigator, createStackNavigator, createAppContainer } from 'react-navigation';
 
@@ -56,4 +56,19 @@ const bottomTabNavigator = createBottomTabNavigator({
   }
 });
 
-export default  createAppContainer(bottomTabNavigator);
+const MainNavigagor = createAppContainer(bottomTabNavigator);
+
+class App extends Component {
+  render() {
+    return (
+      <View style={{
+        flex: 1,
+      }}>
+        <StatusBar hidden />
+        <MainNavigagor/>
+      </View>
+    );
+  }
+}
+
+export default App;
