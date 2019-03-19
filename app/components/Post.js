@@ -50,14 +50,16 @@ const styles = StyleSheet.create({
   },
   meta: {
     flexDirection: 'row',
-    fontSize: StyleCfs.meta,
+    fontSize: StyleCfs.meta
   },
   date: {
-    flexGrow: 1
+    flexGrow: 1,
+    color: StyleCfs.metaColor
   },
   view: {
     flexGrow: 1,
-    textAlign: 'right'
+    textAlign: 'right',
+    color: StyleCfs.metaColor
   }
 })
 

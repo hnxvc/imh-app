@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, RefreshControl } from 'react-native';
+import { View, Text, FlatList, RefreshControl, StyleSheet } from 'react-native';
 
 import { Post } from '../components/Index';
+import StyleCfs from '../configs/StyleCfs';
 class PostListScreen extends Component {
   static navigationOptions =
   {
@@ -30,7 +31,7 @@ class PostListScreen extends Component {
     
     return (
       <View>
-        <Text>Post list</Text>
+        <Text style={styles.title}>Wordpress</Text> 
         <FlatList
           refreshControl={
             <RefreshControl
@@ -61,5 +62,15 @@ class PostListScreen extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  title: {
+    paddingTop: StyleCfs.padding,
+    paddingBottom: StyleCfs.padding,
+    paddingLeft: StyleCfs.padding,
+    paddingRight: StyleCfs.padding,
+    fontSize: StyleCfs.heading
+  }
+});
 
 export default PostListScreen;

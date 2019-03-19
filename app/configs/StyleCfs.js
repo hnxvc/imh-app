@@ -19,5 +19,6 @@ export default {
   borderColor: '#eee',
   textColor: '#222222',
   light: '#fff',
-  radius: 5
+  radius: 5,
+  metaColor: '#6d6d6d'
 };

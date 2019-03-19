@@ -62,7 +62,7 @@ class App extends Component {
   render() {
     return (
       <View style={{
-        flex: 1,
+        flex: 1
       }}>
         <StatusBar hidden />
         <MainNavigagor/>
