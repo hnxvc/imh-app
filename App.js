@@ -43,8 +43,8 @@ const bottomTabNavigator = createBottomTabNavigator({
         // FIXME: change it work on ios, adroind
         if (routeName === 'Home') {
           iconName = 'ios-home';
-        } else if (routeName === 'Settings') {
-          iconName = 'ios-category';
+        } else if (routeName === 'Categories') {
+          iconName = 'ios-list';
         }
 
         return <IconComponent name={iconName} size={25} color={tintColor} />;
