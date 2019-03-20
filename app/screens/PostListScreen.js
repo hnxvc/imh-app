@@ -26,13 +26,17 @@ class PostListScreen extends Component {
     // });
   }
 
+  renderHeader() {
+    return <Text style={styles.title}>Wordpress</Text>;
+  }
+
   render() {
     const {navigate} = this.props.navigation;
     
     return (
       <View>
-        <Text style={styles.title}>Wordpress</Text> 
         <FlatList
+          ListHeaderComponent={this.renderHeader}
           refreshControl={
             <RefreshControl
               refreshing={this.state.refreshing}
