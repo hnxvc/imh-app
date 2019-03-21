@@ -34,7 +34,7 @@ class PostDetailScreen extends Component {
           <Text style={styles.title}>The image name is resolved the same way JS modules are resolved.</Text>
           <View style={styles.meta}>
             <Text style={styles.date}>20/10/2019</Text>
-            <Text style={styles.view}>2k views</Text>
+            <Text style={styles.view}>2k Views</Text>
           </View>
           <Image 
             source={require('../../assets/imgs/bg.jpg')}
@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
     paddingTop: StyleCfs.padding,
     paddingBottom: StyleCfs.padding,
     paddingLeft: StyleCfs.padding,
-    paddingRight: StyleCfs.padding
+    paddingRight: StyleCfs.padding,
+    fontFamily: 'sspb'
   },
   meta: {
     paddingTop: StyleCfs.padding,
@@ -75,12 +76,14 @@ const styles = StyleSheet.create({
   },
   date: {
     flexGrow: 1,
-    color: StyleCfs.metaColor
+    color: StyleCfs.metaColor,
+    fontFamily: 'ssp'
   },
   view: {
     flexGrow: 1,
     textAlign: 'right',
-    color: StyleCfs.metaColor
+    color: StyleCfs.metaColor,
+    fontFamily: 'ssp'
   },
   image: {
     width: '100%',
@@ -93,7 +96,8 @@ const styles = StyleSheet.create({
     paddingRight: StyleCfs.padding,
   },
   content: {
-    fontSize: 18
+    fontSize: 18,
+    fontFamily: 'ssp'
   }
 })
 

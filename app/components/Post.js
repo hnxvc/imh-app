@@ -14,7 +14,7 @@ class Post extends Component {
             <Text style={styles.title}>The image name is resolved the same way JS modules are resolved.</Text>
             <View style={styles.meta}>
               <Text style={styles.date}>20/10/2019</Text>
-              <Text style={styles.view}>2k views</Text>
+              <Text style={styles.view}>2k Views</Text>
             </View>
           </View>
           <Image 
@@ -46,7 +46,8 @@ const styles = StyleSheet.create({
     paddingRight: StyleCfs.padding
   },
   title: {
-    fontSize: StyleCfs.title
+    fontSize: StyleCfs.title,
+    fontFamily: 'sspb'
   },
   meta: {
     flexDirection: 'row',

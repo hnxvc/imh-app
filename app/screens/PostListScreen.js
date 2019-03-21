@@ -73,7 +73,8 @@ const styles = StyleSheet.create({
     paddingBottom: StyleCfs.padding,
     paddingLeft: StyleCfs.padding,
     paddingRight: StyleCfs.padding,
-    fontSize: StyleCfs.heading
+    fontSize: StyleCfs.heading,
+    fontFamily: 'sspb'
   }
 });
 

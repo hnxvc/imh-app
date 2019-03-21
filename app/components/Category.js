@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: StyleCfs.heading,
-    color: '#fff'
+    color: '#fff',
+    fontFamily: 'sspb'
   }
 })
 

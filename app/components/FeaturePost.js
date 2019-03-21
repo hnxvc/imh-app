@@ -34,7 +34,7 @@ class FeaturePost extends Component {
 
             <View style={styles.meta}>
               <Text style={styles.date}>20/10/2019</Text>
-              <Text style={styles.view}>2k views</Text>
+              <Text style={styles.view}>2k Views</Text>
             </View>
 
           </View>
@@ -60,16 +60,19 @@ const styles = StyleSheet.create({
     fontSize: StyleCfs.heading,
     color: '#000',
     paddingTop: StyleCfs.padding,
-    paddingBottom: StyleCfs.padding
+    paddingBottom: StyleCfs.padding,
+    fontFamily: 'sspb' 
   },
   meta: {
     flexDirection: 'row',
     fontSize: StyleCfs.meta,
-    color: StyleCfs.metaColor
+    color: StyleCfs.metaColor,
+    fontFamily: 'ssp'
   },
   date: {
     flexGrow: 1,
-    color: StyleCfs.metaColor
+    color: StyleCfs.metaColor,
+    fontFamily: 'ssp'
   },
   view: {
     flexGrow: 1,

@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, StatusBar} from 'react-native';
 import React, { Component } from 'react';
+import { Font } from 'expo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createBottomTabNavigator, createStackNavigator, createAppContainer } from 'react-navigation';
 
@@ -59,14 +60,30 @@ const bottomTabNavigator = createBottomTabNavigator({
 const MainNavigagor = createAppContainer(bottomTabNavigator);
 
 class App extends Component {
+
+  state = {
+    fontLoaded: false,
+  };
+  async componentDidMount() {
+    await Font.loadAsync({
+      'ssp': require('./assets/fonts/SourceSansProRegular.ttf'),
+      'sspb': require('./assets/fonts/SourceSansProSemiBold.ttf')
+    });
+
+    this.setState({ fontLoaded: true });
+  }
+
   render() {
+    if (!this.state.fontLoaded) {
+      return null;
+    }
     return (
-      <View style={{
-        flex: 1
-      }}>
-        <StatusBar hidden />
-        <MainNavigagor/>
-      </View>
+        <View style={{
+          flex: 1,
+        }}>
+          <StatusBar hidden />
+          <MainNavigagor/>
+        </View>
     );
   }
 }
