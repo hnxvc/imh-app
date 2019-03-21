@@ -41,7 +41,6 @@ const bottomTabNavigator = createBottomTabNavigator({
         const { routeName } = navigation.state;
         let IconComponent = Ionicons;
         let iconName;
-        // FIXME: change it work on ios, adroind
         if (routeName === 'Home') {
           iconName = 'ios-home';
         } else if (routeName === 'Categories') {
