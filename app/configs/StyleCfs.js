@@ -7,7 +7,7 @@ export default {
   danger: '#dc3545',
 
   paddingTopScreen: 30,
-  padding: 15,
+  padding: 10,
 
   // font size
   title: 18,
