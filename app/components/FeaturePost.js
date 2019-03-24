@@ -12,6 +12,8 @@ import StyleCfs from '../configs/StyleCfs';
 
 class FeaturePost extends Component {
   render() {
+    const post = this.props.post;
+
     return (
       <TouchableWithoutFeedback 
         onPress={this.props.onPress} 
@@ -20,7 +22,9 @@ class FeaturePost extends Component {
           style={styles.wrap}
         >
           <Image 
-            source = {require('../../assets/imgs/bg.jpg')}
+            source = {{
+              uri: post.imageUrl
+            }}
             style = {styles.image}
           />
           <View
@@ -29,12 +33,12 @@ class FeaturePost extends Component {
             <Text
               style={styles.title}
             >
-              React Native provides a unified way of managing images 
+              {post.title}
             </Text>
 
             <View style={styles.meta}>
-              <Text style={styles.date}>20/10/2019</Text>
-              <Text style={styles.view}>2k Views</Text>
+              <Text style={styles.date}>{post.createdDate}</Text>
+              <Text style={styles.view}>{post.views} Views</Text>
             </View>
 
           </View>

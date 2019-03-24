@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, FlatList, RefreshControl, Button, Alert } from 'react-native';
-import StyleCfgs from '../configs/StyleCfs';
-
+import { View, StyleSheet, FlatList, RefreshControl, Alert } from 'react-native';
 import { FeaturePost, Post } from '../components/Index';
-
+import { AppService } from '../services/app-services';
+import axios from 'axios';
 class HomeScreen extends Component {
 
   static navigationOptions =
@@ -15,17 +14,11 @@ class HomeScreen extends Component {
     super(props);
     this.state = {
       refreshing: false,
-      posts: [{key: 'Devin'},
-      {key: 'Jackson'},
-      {key: 'James'},
-      {key: 'Joel'},
-      {key: 'John'},
-      {key: 'Jillian'},
-      {key: 'Jimmy'},
-      {key: 'Julie'}]
+      posts: []
     };
 
     this.loadMoreData = this.loadMoreData.bind(this);
+    this.initData = this.initData.bind(this);
   }
 
   _onRefresh = () => {
@@ -39,17 +32,29 @@ class HomeScreen extends Component {
   }
 
   loadMoreData() {
-    const newPost = this.state.posts.concat(
-    [{key: 'Devin'},
-    {key: 'Jackson'},
-  ]);
 
-    this.setState({
-      posts: newPost
-    }); 
+    // this.setState({
+    //   posts: newPost
+    // }); 
 
     // console.log('XXXXX === ', this.state.posts);
 
+  }
+
+  componentDidMount() {
+    this.initData();
+  }
+
+  initData() {
+    AppService.getHomeData().then(data => {
+      this.setState({
+        posts: data
+      });
+      console.log('REMOVEME ==== data', data);
+      
+    }).catch(err => {
+      Alert.alert(err);
+    });
   }
 
   render() {
@@ -72,13 +77,16 @@ class HomeScreen extends Component {
           data = {this.state.posts}
           renderItem={({item, index}) => index === 0 ?
             <FeaturePost
-              onPress={() => navigate('PostDetail', {name: 'Jane'})}
+              post = {item}
+              onPress={() => navigate('PostDetail', {postId: item.id})}
             />
             :
             <Post
-              onPress={() => navigate('PostDetail', {name: 'Jane'})}
+              post = {item}
+              onPress={() => navigate('PostDetail', {postId: item.id})}
             />
           }
+          keyExtractor={(item) => item.id.toString()}
         />
       </View>
     );

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "When Physical Illness Feeds Mental Illness",
+    "imageUrl": "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "createdDate": "01/05/1994",
+    "views": "1K"
+  },
+  {
+    "id": 2,
+    "title": "The Amazon Diaries: How Whole Foods Lost Employees’ Trust",
+    "imageUrl": "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "createdDate": "01/06/1994",
+    "views": "1.2K"
+  },
+  {
+    "id": 3,
+    "title": "Meet the ‘Hillbilly Lawyer’ Fighting to Take Down Big Pharma",
+    "imageUrl": "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "createdDate": "11/05/1994",
+    "views": "1.1K"
+  },
+  {
+    "id": 4,
+    "title": "Google’s Stadia Could Take Video Games Out of Your Hands",
+    "imageUrl": "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "createdDate": "01/05/1994",
+    "views": "1K"
+  },
+  {
+    "id": 5,
+    "title": "The Internet’s Phone Book Is Broken",
+    "imageUrl": "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "createdDate": "31/05/1994",
+    "views": "1K"
+  },
+  {
+    "id": 6,
+    "title": "We’re Loving Our Pets, But Not Each Other",
+    "imageUrl": "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "createdDate": "14/05/1994",
+    "views": "1K"
+  },
+  {
+    "id": 7,
+    "title": "How the World’s Biggest Brewer Killed the Craft Beer Buzz",
+    "imageUrl": "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "createdDate": "21/05/1994",
+    "views": "198"
+  },
+  {
+    "id": 8,
+    "title": "The Death of Boredom",
+    "imageUrl": "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "createdDate": "01/05/1994",
+    "views": "3K"
+  }
+]
