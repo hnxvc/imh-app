@@ -31,7 +31,6 @@ class Post extends Component {
 const styles = StyleSheet.create({
   wrap: {
     flexDirection: 'row',
-
     padding: StyleCfs.padding,
     borderTopWidth: 1,
     borderTopColor: StyleCfs.borderColor,
@@ -47,7 +46,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: StyleCfs.title,
-    fontFamily: 'sspb'
+    fontFamily: StyleCfs.familyBold
   },
   meta: {
     flexDirection: 'row',
@@ -55,12 +54,12 @@ const styles = StyleSheet.create({
   },
   date: {
     flexGrow: 1,
-    color: StyleCfs.metaColor
+    color: StyleCfs.greyColor
   },
   view: {
     flexGrow: 1,
     textAlign: 'right',
-    color: StyleCfs.metaColor
+    color: StyleCfs.greyColor
   }
 })
 

@@ -58,26 +58,26 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: StyleCfs.heading,
-    color: '#000',
+    color: StyleCfs.darkColor,
     paddingTop: StyleCfs.padding,
     paddingBottom: StyleCfs.padding,
-    fontFamily: 'sspb' 
+    fontFamily: StyleCfs.familyBold
   },
   meta: {
     flexDirection: 'row',
     fontSize: StyleCfs.meta,
-    color: StyleCfs.metaColor,
-    fontFamily: 'ssp'
+    color: StyleCfs.greyColor,
+    fontFamily: StyleCfs.family
   },
   date: {
     flexGrow: 1,
-    color: StyleCfs.metaColor,
-    fontFamily: 'ssp'
+    color: StyleCfs.greyColor,
+    fontFamily: StyleCfs.family
   },
   view: {
     flexGrow: 1,
     textAlign: 'right',
-    color: StyleCfs.metaColor
+    color: StyleCfs.greyColor
   }
 })
 

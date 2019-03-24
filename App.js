@@ -10,6 +10,7 @@ import {
   PostDetailScreen, 
   PostListScreen 
 } from './app/screens/Index';
+import StyleCfs from './app/configs/StyleCfs';
 
 const HomeNavigator = createStackNavigator({
   Home: HomeScreen,
@@ -51,8 +52,8 @@ const bottomTabNavigator = createBottomTabNavigator({
       },
     }),
     tabBarOptions: {
-      activeTintColor: 'tomato',
-      inactiveTintColor: 'gray',
+      activeTintColor: StyleCfs.primaryColor,
+      inactiveTintColor: StyleCfs.greyColor,
   }
 });
 
@@ -80,11 +81,22 @@ class App extends Component {
         <View style={{
           flex: 1,
         }}>
-          <StatusBar hidden />
-          <MainNavigagor/>
+          <StatusBar
+            barStyle="dark-content"
+          />
+          <View style={styles.main}>
+            <MainNavigagor/>
+          </View>
         </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  main: {
+    flex: 1,
+    paddingTop: 20
+  }
+});
 
 export default App;

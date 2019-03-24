@@ -85,8 +85,6 @@ class CategoriesScreen extends Component {
 
 const styles = StyleSheet.create({
   wrap: {
-    paddingTop: 8,
-    paddingBottom: 5,
     alignItems: 'center'
   }
 })

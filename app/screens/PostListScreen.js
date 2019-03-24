@@ -70,11 +70,13 @@ class PostListScreen extends Component {
 const styles = StyleSheet.create({
   title: {
     paddingTop: StyleCfs.padding,
+    marginTop: -8,
     paddingBottom: StyleCfs.padding,
     paddingLeft: StyleCfs.padding,
     paddingRight: StyleCfs.padding,
     fontSize: StyleCfs.heading,
-    fontFamily: 'sspb'
+    fontFamily: StyleCfs.familyBold,
+    color: StyleCfs.primaryColor
   }
 });
 

@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   wrap: {
     width: 170,
     height: 170,
-    margin: 7,
+    margin: StyleCfs.margin,
     overflow: 'hidden',
     justifyContent: 'center',
     alignItems: 'center',
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: StyleCfs.heading,
     color: '#fff',
-    fontFamily: 'sspb',
+    fontFamily: StyleCfs.familyBold,
     position: 'absolute',
     zIndex: 3
   }

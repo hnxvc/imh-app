@@ -3,6 +3,10 @@ import { View, Text, StyleSheet, Image, ScrollView, RefreshControl } from 'react
 import StyleCfs from '../configs/StyleCfs';
 class PostDetailScreen extends Component {
 
+  static navigationOptions = ({ navigation }) => ({
+    headerStyle: { marginTop: -10 },
+  });
+
   constructor(props) {
     super(props);
     this.state = {
@@ -63,7 +67,8 @@ const styles = StyleSheet.create({
     paddingBottom: StyleCfs.padding,
     paddingLeft: StyleCfs.padding,
     paddingRight: StyleCfs.padding,
-    fontFamily: 'sspb'
+    fontFamily: StyleCfs.familyBold,
+    color: StyleCfs.darkColor
   },
   meta: {
     paddingTop: StyleCfs.padding,
@@ -72,18 +77,18 @@ const styles = StyleSheet.create({
     paddingRight: StyleCfs.padding,
     flexDirection: 'row',
     fontSize: StyleCfs.meta,
-    color: StyleCfs.metaColor
+    color: StyleCfs.greyColor
   },
   date: {
     flexGrow: 1,
-    color: StyleCfs.metaColor,
-    fontFamily: 'ssp'
+    color: StyleCfs.greyColor,
+    fontFamily: StyleCfs.family
   },
   view: {
     flexGrow: 1,
     textAlign: 'right',
-    color: StyleCfs.metaColor,
-    fontFamily: 'ssp'
+    color: StyleCfs.greyColor,
+    fontFamily: StyleCfs.family
   },
   image: {
     width: '100%',
@@ -97,7 +102,8 @@ const styles = StyleSheet.create({
   },
   content: {
     fontSize: 18,
-    fontFamily: 'ssp'
+    fontFamily: StyleCfs.family,
+    color: StyleCfs.darkColor
   }
 })
 

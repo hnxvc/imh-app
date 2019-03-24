@@ -1,24 +1,25 @@
 export default {
 
   // color
-  primary: '#007bff',
-  success: '#28a745',
-  secondary: '#6c757d',
-  danger: '#dc3545',
+  primaryColor: '#0080ff',
+  darkColor: '#090707',
+  lightColor: '#ffffff',
+  greyColor: '#566270',
+  borderColor: '#eeeeee',
 
-  paddingTopScreen: 30,
-  padding: 10,
-
-  // font size
+  // font
+  family: 'ssp',
+  familyBold: 'sspb',
   title: 18,
   heading: 25,
   meta: 10,
 
+  // spacing
+  paddingTopScreen: 30,
+  padding: 12,
+  margin: 7,
+
   // border 
   borderWidth: 1,
-  borderColor: '#eee',
-  textColor: '#222222',
-  light: '#fff',
-  radius: 5,
-  metaColor: '#6d6d6d'
+  radius: 5
 };
