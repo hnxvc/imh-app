@@ -10,7 +10,10 @@ class CategoriesScreen extends Component {
       isRefreshing: false,
       categories: []
     };
-    this.initData = this.initData.bind(this);
+  }
+  
+  componentDidMount() {
+    this.initData(null);
   }
 
   onRefresh = () => {
@@ -21,11 +24,7 @@ class CategoriesScreen extends Component {
     });
   }
 
-  componentDidMount() {
-    this.initData(null);
-  }
-
-  initData(callback) {
+  initData = (callback) => {
     AppService.getCategories().then(data => {
       this.setState({
         categories: data

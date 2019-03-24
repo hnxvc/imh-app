@@ -16,9 +16,6 @@ class HomeScreen extends Component {
       isRefreshing: false,
       posts: []
     };
-
-    this.loadMoreData = this.loadMoreData.bind(this);
-    this.initData = this.initData.bind(this);
   }
 
   onRefresh = () => {
@@ -28,7 +25,7 @@ class HomeScreen extends Component {
     });
   }
 
-  loadMoreData() {
+  loadMoreData = () => {
 
     // AppService.getHomeData().then(data => {
     //   const newPost = this.state.posts.concat(data);
@@ -45,7 +42,7 @@ class HomeScreen extends Component {
     this.initData(null);
   }
 
-  initData(callback) {
+  initData = (callback) => {
     AppService.getHomeData().then(data => {
       this.setState({
         posts: data

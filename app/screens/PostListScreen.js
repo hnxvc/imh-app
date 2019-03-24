@@ -15,7 +15,10 @@ class PostListScreen extends Component {
     this.state = {
       isRefreshing: false,
     };
-    this.initData = this.initData.bind(this);
+  }
+
+  componentDidMount() {
+    this.initData(null);
   }
 
   onRefresh = () => {
@@ -24,12 +27,8 @@ class PostListScreen extends Component {
       this.setState({isRefreshing: false});
     });
   }
-
-  componentDidMount() {
-    this.initData(null);
-  }
-
-  initData(callback) {
+  
+  initData = (callback) => {
     const categoryId = this.props.navigation.getParam('categoryId');
     AppService.getPosts(categoryId).then(data => {
       this.setState({
