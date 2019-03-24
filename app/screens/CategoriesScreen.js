@@ -59,7 +59,10 @@ class CategoriesScreen extends Component {
           data = {this.state.categories} 
           renderItem = {({item}) => <Category 
             category={item}
-            onPress={() => navigate('PostList', {categoryId: item.id})}
+            onPress={() => navigate('PostList', {
+              categoryTitle: item.title,
+              categoryId: item.id
+            })}
           />}
           keyExtractor={(item) => item.id.toString()}
           horizontal={false}

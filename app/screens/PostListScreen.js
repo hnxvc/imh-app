@@ -18,14 +18,11 @@ class PostListScreen extends Component {
     this.initData = this.initData.bind(this);
   }
 
-  _onRefresh = () => {
+  onRefresh = () => {
     this.setState({isRefreshing: true});
-    setTimeout(() => {
+    this.initData(() => {
       this.setState({isRefreshing: false});
-    }, 1000);
-    // fetchData().then(() => {
-    //   this.setState({isRefreshing: false});
-    // });
+    });
   }
 
   componentDidMount() {
@@ -49,21 +46,22 @@ class PostListScreen extends Component {
     });
   }
 
-  renderHeader() {
-    return <Text style={styles.title}>Wordpress</Text>;
+  renderHeader(categoryTitle) {
+    return <Text style={styles.title}>{categoryTitle}</Text>;
   }
 
   render() {
     const {navigate} = this.props.navigation;
+    const categoryTitle = this.props.navigation.getParam('categoryTitle');
     
     return (
       <View>
         <FlatList
-          ListHeaderComponent={this.renderHeader}
+          ListHeaderComponent={this.renderHeader(categoryTitle)}
           refreshControl={
             <RefreshControl
               refreshing={this.state.isRefreshing}
-              onRefresh={this._onRefresh}
+              onRefresh={this.onRefresh}
             />
           }
 
