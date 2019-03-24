@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, ScrollView, RefreshControl } from 'react-native';
 import StyleCfs from '../configs/StyleCfs';
+import { AppService } from '../services/app-services';
 class PostDetailScreen extends Component {
 
   static navigationOptions = ({ navigation }) => ({
@@ -10,47 +11,65 @@ class PostDetailScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      refreshing: false,
+      isRefreshing: false,
+      post: {}
     };
   }
 
-  _onRefresh = () => {
-    this.setState({refreshing: true});
-    setTimeout(() => {
-      this.setState({refreshing: false});
-    }, 1000);
-    // fetchData().then(() => {
-    //   this.setState({refreshing: false});
-    // });
+  componentDidMount() {
+    this.initData(null);
+  }
+
+  onRefresh = () => {
+    this.setState({isRefreshing: true});
+    this.initData(() => {
+      this.setState({isRefreshing: false});
+    });
+  }
+
+  initData = (callback) => {
+    const postId = this.props.navigation.getParam('postId');
+    AppService.getPost(postId).then(data => {
+      this.setState({
+        post: data
+      });
+      if (callback) {
+        callback();
+      }
+    }).catch(err => {
+      if (callback) {
+        callback();
+      }
+      Alert.alert(err);
+    });
   }
 
   render() {
+    const post = this.state.post;
     return (
       <View>
         <ScrollView
           refreshControl={
             <RefreshControl
-              refreshing={this.state.refreshing}
-              onRefresh={this._onRefresh}
+              refreshing={this.state.isRefreshing}
+              onRefresh={this.onRefresh}
             />
           }
         >
-          <Text style={styles.title}>The image name is resolved the same way JS modules are resolved.</Text>
+          <Text style={styles.title}>{post.title}</Text>
           <View style={styles.meta}>
-            <Text style={styles.date}>20/10/2019</Text>
-            <Text style={styles.view}>2k Views</Text>
+            <Text style={styles.date}>{post.createdDate}</Text>
+            <Text style={styles.view}>{post.views} Views</Text>
           </View>
           <Image 
-            source={require('../../assets/imgs/bg.jpg')}
+            source={{
+              uri: post.imageUrl
+            }}
             style={styles.image}
           />
           <View style={styles.wrapContent}>
             <Text style={styles.content}>
-              {`This page will help you install and build your first React Native app. If you already have React Native installed, you can skip ahead to the Tutorial.
-
-If you are coming from a web background, the easiest way to get started with React Native is with Expo tools because they allow you to start a project without installing and configuring Xcode or Android Studio. Expo CLI sets up a development environment on your local machine and you can be writing a React Native app within minutes. For instant development, you can use Snack to try React Native out directly in your web browser.
-
-If you are familiar with native development, you will likely want to use React Native CLI. It requires Xcode or Android Studio to get started. If you already have one of these tools installed, you should be able to get up and running within a few minutes. If they are not installed, you should expect to spend about an hour installing and configuring them.`}
+              { `${post.content}` }
             </Text>
           </View>
         </ScrollView>

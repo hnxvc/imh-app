@@ -1,5 +1,6 @@
 import {axios} from 'axios';
 import posts from '../data/posts.json';
+import post from '../data/single-post.json';
 import categories from '../data/categories.json';
 
 export const AppService = {
@@ -26,10 +27,6 @@ export const AppService = {
     return getData;
   },
 
-  // getSinglePost(postId) {
-  //   return axios.get('../data/single-post.json');
-  // },
-
   getPosts(categoryId) {
     console.log('Category id', categoryId);
     const getData = new Promise((resolve, reject) => {
@@ -40,5 +37,17 @@ export const AppService = {
       }
     });
     return getData;
-  }
+  },
+
+  getPost(postId) {
+    console.log('Post id', postId);
+    const getData = new Promise((resolve, reject) => {
+      if (post) {
+        resolve(post);
+      } else {
+        reject('Post is null');
+      }
+    });
+    return getData;
+  },
 }
