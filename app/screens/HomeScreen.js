@@ -13,7 +13,7 @@ class HomeScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      refreshing: false,
+      isRefreshing: false,
       posts: []
     };
 
@@ -21,38 +21,42 @@ class HomeScreen extends Component {
     this.initData = this.initData.bind(this);
   }
 
-  _onRefresh = () => {
-    this.setState({refreshing: true});
-    setTimeout(() => {
-      this.setState({refreshing: false});
-    }, 1000);
-    // fetchData().then(() => {
-    //   this.setState({refreshing: false});
-    // });
+  onRefresh = () => {
+    this.setState({isRefreshing: true});
+    this.initData(() => {
+      this.setState({isRefreshing: false});
+    });
   }
 
   loadMoreData() {
 
-    // this.setState({
-    //   posts: newPost
-    // }); 
-
-    // console.log('XXXXX === ', this.state.posts);
+    // AppService.getHomeData().then(data => {
+    //   const newPost = this.state.posts.concat(data);
+    //   this.setState({
+    //     posts: newPost,
+    //   }); 
+    // }).catch(err => {
+    //   Alert.alert(err);
+    // });
 
   }
 
   componentDidMount() {
-    this.initData();
+    this.initData(null);
   }
 
-  initData() {
+  initData(callback) {
     AppService.getHomeData().then(data => {
       this.setState({
         posts: data
       });
-      console.log('REMOVEME ==== data', data);
-      
+      if (callback) {
+        callback();
+      }
     }).catch(err => {
+      if (callback) {
+        callback();
+      }
       Alert.alert(err);
     });
   }
@@ -69,8 +73,8 @@ class HomeScreen extends Component {
 
           refreshControl={
             <RefreshControl
-              refreshing={this.state.refreshing}
-              onRefresh={this._onRefresh}
+              refreshing={this.state.isRefreshing}
+              onRefresh={this.onRefresh}
             />
           }
 

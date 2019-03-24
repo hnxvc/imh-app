@@ -1,34 +1,42 @@
 [
   {
     "id": 1,
-    "title": "HTML, CSS, JS"
+    "title": "HTML, CSS, JS",
+   "imageUrl": "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 2,
-    "title": "React, React Native"
+    "title": "React, React Native",
+    "imageUrl": "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 3,
-    "title": "Wordpress"
+    "title": "Wordpress",
+    "imageUrl": "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 4,
-    "title": "Wordpress"
+    "title": "Wordpress",
+    "imageUrl": "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 5,
-    "title": "Java"
+    "title": "Java",
+    "imageUrl": "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 6,
-    "title": "SQL"
+    "title": "SQL",
+    "imageUrl": "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 7,
-    "title": "GIT"
+    "title": "GIT",
+    "imageUrl": "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 3,
-    "title": "Productivity"
+    "title": "Productivity",
+    "imageUrl": "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   }
 ]

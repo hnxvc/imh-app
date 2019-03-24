@@ -1,5 +1,6 @@
 import {axios} from 'axios';
 import posts from '../data/posts.json';
+import categories from '../data/categories.json';
 
 export const AppService = {
 
@@ -14,15 +15,22 @@ export const AppService = {
     return getData;
   }, 
 
-  // getPosts(categoryId) {
-  //   return axios.get('../data/posts.json');
-  // },
+  getCategories() {
+    const getData = new Promise((resolve, reject) => {
+      if (categories) {
+        resolve(categories);
+      } else {
+        reject('Categories is null');
+      }
+    });
+    return getData;
+  },
 
   // getSinglePost(postId) {
   //   return axios.get('../data/single-post.json');
   // },
 
-  // getCategories() {
+  // getPosts() {
   //   return axios.get('../data/categories.json');
   // }
 }

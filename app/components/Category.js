@@ -4,18 +4,21 @@ import StyleCfs from '../configs/StyleCfs';
 
 class Category extends Component {
   render() {
+    const category = this.props.category;
     return (
       <TouchableWithoutFeedback 
         onPress={this.props.onPress}
       >
         <View style={styles.wrap}>
           <Image
-            source={require('../../assets/imgs/bg.jpg')}
+            source={{
+              uri: category.imageUrl
+            }}
             style={styles.image}
           />
           <View style={styles.bg}></View>
           <Text style={styles.title}>
-            {this.props.title}
+            {category.title}
           </Text>
         </View>
       </TouchableWithoutFeedback>
