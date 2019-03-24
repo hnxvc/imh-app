@@ -30,7 +30,15 @@ export const AppService = {
   //   return axios.get('../data/single-post.json');
   // },
 
-  // getPosts() {
-  //   return axios.get('../data/categories.json');
-  // }
+  getPosts(categoryId) {
+    console.log('Category id', categoryId);
+    const getData = new Promise((resolve, reject) => {
+      if (posts) {
+        resolve(posts);
+      } else {
+        reject('Posts is null');
+      }
+    });
+    return getData;
+  }
 }

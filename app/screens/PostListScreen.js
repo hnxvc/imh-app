@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, RefreshControl, StyleSheet } from 'react-native';
-
+import { View, Text, FlatList, RefreshControl, StyleSheet, Alert } from 'react-native';
 import { Post } from '../components/Index';
 import StyleCfs from '../configs/StyleCfs';
+import { AppService } from '../services/app-services';
+
 class PostListScreen extends Component {
   static navigationOptions =
   {
@@ -12,18 +13,40 @@ class PostListScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      refreshing: false,
+      isRefreshing: false,
     };
+    this.initData = this.initData.bind(this);
   }
 
   _onRefresh = () => {
-    this.setState({refreshing: true});
+    this.setState({isRefreshing: true});
     setTimeout(() => {
-      this.setState({refreshing: false});
+      this.setState({isRefreshing: false});
     }, 1000);
     // fetchData().then(() => {
-    //   this.setState({refreshing: false});
+    //   this.setState({isRefreshing: false});
     // });
+  }
+
+  componentDidMount() {
+    this.initData(null);
+  }
+
+  initData(callback) {
+    const categoryId = this.props.navigation.getParam('categoryId');
+    AppService.getPosts(categoryId).then(data => {
+      this.setState({
+        posts: data
+      });
+      if(callback) {
+        callback();
+      }
+    }).catch(err => {
+      if(callback) {
+        callback();
+      }
+      Alert.alert(err);
+    });
   }
 
   renderHeader() {
@@ -39,28 +62,19 @@ class PostListScreen extends Component {
           ListHeaderComponent={this.renderHeader}
           refreshControl={
             <RefreshControl
-              refreshing={this.state.refreshing}
+              refreshing={this.state.isRefreshing}
               onRefresh={this._onRefresh}
             />
           }
 
-          data = {
-            [
-              {key: 'Devin'},
-              {key: 'Jackson'},
-              {key: 'James'},
-              {key: 'Joel'},
-              {key: 'John'},
-              {key: 'Jillian'},
-              {key: 'Jimmy'},
-              {key: 'Julie'}
-            ]
-          }
-          renderItem={({item, index}) => 
+          data = {this.state.posts}
+          renderItem={({item}) => 
             <Post
-              onPress={() => navigate('PostDetail', {name: 'Jane'})}
+              post = {item}
+              onPress={() => navigate('PostDetail', {postId: item.id})}
             />
           }
+          keyExtractor = {item => item.id.toString()}
         />
       </View>
     );
